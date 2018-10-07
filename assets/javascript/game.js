@@ -21,8 +21,8 @@ document.onkeyup = function (event) {
   for (i = 0; i < guessesLeft.length; i++) {
 
     //Determines which key a user presses
-    var userGuess = event.key;
-    guessesLeftText.innerHTML = userGuess;
+    var userGuess = event.key
+    // guessesLeftText = userGuess; //this is to set the Current Guesses
     console.log(userGuess);
 
     // Randomly chooses a choice from the options array. This is the Computer's guess.
@@ -31,10 +31,10 @@ document.onkeyup = function (event) {
 
     if (userGuess === computerGuess) {
       wins++;
-      guessesLeftText.reset(), currentGuessesText.reset()
+      // guessesLeftText.reset(), currentGuessesText.reset() //these are to clear out the form fields upon resetting 
     }
 
-    //add +1 to wins and reset game
+    //if user loses then subtract 1 from the total losses above and lower number of guesses left by 1
     else {
       losses++;
       guessesLeft--;
